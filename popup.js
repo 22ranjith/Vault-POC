@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     var checkPageButton = document.getElementById('checkPage');
     checkPageButton.addEventListener('click', function() {
-      var newURL = "http://3.139.138.221:8080/jenkins/login";
+      var newURL = "https://www.facebook.com/login/";
       chrome.tabs.create({ url: newURL,active:false }, function(tab){
           console.log('Attempting to inject script into tab:',tab);
           chrome.scripting.executeScript({
