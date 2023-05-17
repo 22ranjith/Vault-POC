@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
     checkPageButton.addEventListener('click', function() {
       var newURL = "http://3.139.138.221:8080/jenkins/";
       chrome.tabs.create({ url: newURL,active:false }, function(tab){
-        // post('fill-forms');
           console.log('Attempting to inject script into tab:',tab);
           chrome.scripting.executeScript({
             target: {tabId: tab.id},
@@ -17,12 +16,4 @@ document.addEventListener("DOMContentLoaded", function() {
   
     }, false);
   }, false);
-
-  const post = cmd => chrome.tab.sendMessage({
-    cmd
-  }, () => {
-    window.close();
-    chrome.runtime.lastError;
-    console.log(profile);
-  });
 
